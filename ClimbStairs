@@ -1,0 +1,23 @@
+public class Main {
+
+    public static void main(String[] args) {
+        int digit = 4;
+        System.out.print(climbStairs(digit));
+    }
+
+    public static int climbStairs(int n) {
+        //base cases
+        if (n == 1) return 1;
+        if (n == 2) return 2;
+
+        int a = 1, b = 2, c = 0;
+
+        for (int i = 3; i <= n; i++) { //starting at 3 becasue we know the base cases
+            c = a + b; //fibonacci step
+            a = b; //move forward
+            b = c;
+        }
+
+        return c;
+    }
+}
